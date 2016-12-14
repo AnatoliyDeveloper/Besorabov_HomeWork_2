@@ -9,11 +9,10 @@
     </style>
     
     <style name="DataButton">
-        <item name="android:layout_width">@dimen/button_width</item>
-        <item name="android:layout_height">@dimen/button_height</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">@string/button_text</item>
-        <item name="android:text">@string/button_text</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_width">116dp</item>
+        <item name="android:layout_height">123dp</item>
+        <item name="android:background">@android:color/white</item>
     </style>
 
 </resources>

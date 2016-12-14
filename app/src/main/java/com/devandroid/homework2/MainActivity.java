@@ -1,6 +1,7 @@
 package com.devandroid.homework2;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -53,16 +54,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = null;
         switch (view.getId()) {
             case R.id.app_btn:
-                intent = new Intent(this, LastActivity.class);
+                intent = callAppActivity();
                 break;
             case R.id.call_btn:
-                intent = new Intent(Intent.ACTION_DIAL);
+                intent = callDialApp();
                 break;
             case R.id.sms_btn:
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.setType("vnd.android-dir/mms-sms");
+                intent = callSmsApp();
                 break;
         }
         startActivity(intent);
+    }
+
+    @NonNull
+    private Intent callSmsApp() {
+        Intent intent;
+        intent = new Intent(Intent.ACTION_VIEW);
+        intent.setType("vnd.android-dir/mms-sms");
+        return intent;
+    }
+
+    @NonNull
+    private Intent callDialApp() {
+        Intent intent;
+        intent = new Intent(Intent.ACTION_DIAL);
+        return intent;
+    }
+
+    @NonNull
+    private Intent callAppActivity() {
+        Intent intent;
+        intent = new Intent(this, AppActivity.class);
+        return intent;
     }
 }
